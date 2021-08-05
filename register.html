@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册(PYG.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <meta name="description"
+        content="品优购PYG.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
+    <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- 引入初始化css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./fonts/font_2594362_phx3ams6fgq/iconfont.css">
+    <link rel="stylesheet" href="./fonts/font_hyiga8oumrd/iconfont.css">
+    <!-- 引入register.css文件 -->
+    <link rel="stylesheet" href="./css/register.css">
+    <style>
+        /* @font-face {
+            font-family: 'iconfont';
+            src: url('./fonts/font_2594362_ff15ezrb5vm/iconfont.woff2?t=1624016072901') format('woff2'),
+                url('./fonts/font_2594362_ff15ezrb5vm/iconfont.woff?t=1624016072901') format('woff'),
+                url('./fonts/font_2594362_ff15ezrb5vm/iconfont.ttf?t=1624016072901') format('truetype');
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="w register">
+        <div class="title">
+            <img src="./imgs/logo.png" alt="">
+        </div>
+        <div class="main">
+            <div class="main_title">
+                <h2 class="clearfix">
+                    <span class="fl">注册新用户</span>
+                    <span class="fr">我有账号，去<a href="./load.html">登陆</a>
+                    </span>
+                </h2>
+            </div>
+            <div class="main_register">
+                <form action="#">
+                    <div class="number">
+                        <label for="number">手机号:</label>
+                        <input type="tel" name="number" id="number">
+                        <span class="number_warn" style="display: none;">手机号码格式不正确，请从新输入</span>
+                        <img src="./imgs/success.png" alt="" class="number_success" style="display: none;">
+                    </div>
+                    <div class="yard">
+                        <label for="yard">短息验证码:</label>
+                        <input type="text" name="yard" id="yard">
+                    </div>
+                    <div class="password">
+                        <label for="password">登录密码:</label>
+                        <input type="password" name="password" id="password"><i class="iconfont icon-yanjing2"></i>
+                        <span class="password_warn" style="display: none;">密码不少于6位数，请从新输入 </span>
+                        <img src="./imgs/success.png" alt="" class="password_success" style="display: none;">
+                    </div>
+
+                    <div class="saferate">
+                        <div class="saferate_innter">
+                            <span>安全程度</span>
+                            <i>弱</i>
+                            <i>中</i>
+                            <i>强</i>
+                        </div>
+                    </div>
+
+                    <div class="verify">
+                        <label for="verify">确认密码</label>
+                        <input type="password" name="verify" id="verify">
+                        <span class="verify_warn" style="display: none;">密码不一致，请从新输入</span>
+                        <img src="./imgs/success.png" alt="" class="verify_success" style="display: none;">
+                    </div>
+
+                    <div class="deal">
+                        <a href="#" class="fl iconfont" data-value="1"><i>&#xe687;</i></a><span>同意协议并注册</span>
+                        <a href="#">《知果果用户协议》</a>
+                    </div>
+                    <input type="submit" value="完成注册">
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let mark_out = document.querySelector(".deal a:first-child");
+        let mark_inside = document.querySelector(".deal a:first-child i");
+
+        mark_out.onclick = function () {
+            let mark_inside_display = mark_inside.style.display;
+            let value = mark_out.dataset.value;
+            if (mark_inside_display === "none") {
+                mark_inside.style.display = "block";
+                mark_out.dataset.value = "1";
+                console.log(mark_out.dataset.value);
+            } else {
+                mark_inside.style.display = "none";
+                mark_out.dataset.value = "0";
+                console.log(mark_out.dataset.value);
+            }
+        }
+    </script>
+    <script>
+        let reg = new RegExp('^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-8])|(18[0-9])|166|198|199|(147))\\d{8}$', 'g');
+        let number = document.getElementById("number");
+        let number_success = document.getElementsByClassName("number_success")[0];
+
+        let reg_password = new RegExp('^[0-9]{6,12}$', 'g');
+        let password = document.getElementById("password");
+        let password_success = document.getElementsByClassName("password_success")[0];
+        let reg_password_warn = document.getElementsByClassName("password_warn")[0];
+        let weak = document.querySelector(".saferate_innter i:nth-of-type(1)");
+        let middle = document.querySelector(".saferate_innter i:nth-of-type(2)");
+        let stong = document.querySelector(".saferate_innter i:nth-of-type(3)");
+
+        let verifty = document.getElementById("verify");
+        let verifty_warn = document.getElementsByClassName("verify_warn")[0];
+        let verifty_success = document.getElementsByClassName("verify_success")[0];
+        number.onblur = function () {
+            let value = this.value;
+            let result = reg.test(value);
+            let number_warn = document.getElementsByClassName("number_warn")[0];
+            if (!result) {
+                number_warn.style.display = "inline-block";
+                number_success.style.display = "none";
+            } else {
+                number_warn.style.display = "none";
+                number_success.style.display = "inline-block";
+            }
+        }
+        password.onblur = function () {
+            let value = this.value;
+            let weakFlag = 0;
+            let middleFlag = 0;
+            let strongFlag = 0;
+            let result = 0;
+            // console.log(value.length);
+            if (value.length < 6) {
+                result = 1
+            } else if (Number(value) + "" !== NaN + "") {
+                weakFlag = 1
+            } else if (isMiddle(value) && !isStrong(value)) {
+                middleFlag = 1;
+            } else {
+                strongFlag = 1;
+            }
+            if (weakFlag) {
+                weak.style.backgroundColor = "#de1111";
+            }
+            if (middleFlag) {
+                middle.style.backgroundColor = "#40b83f";
+            }
+            if (strongFlag) {
+                stong.style.backgroundColor = "#f79100";
+            }
+            // let value_int = parseInt(value);
+            // let result = reg_password.test(value_int);
+            // console.log(result);
+            if (result) {
+                reg_password_warn.style.display = "inline-block";
+                password_success.style.display = "none";
+                weak.style.backgroundColor = "gray";
+                middle.style.backgroundColor = "gray";
+                stong.style.backgroundColor = "gray";
+            } else {
+                reg_password_warn.style.display = "none";
+                password_success.style.display = "inline-block";
+            }
+
+        }
+        password.onkeydown = function (e) {
+            if (e.key === "Backspace") {
+                let value = this.value;
+                let weakFlag = 0;
+                let middleFlag = 0;
+                let strongFlag = 0;
+                let result = 0;
+                // console.log(value.length);
+                if (value.length < 6) {
+                    result = 1
+                } else if (Number(value) + "" !== NaN + "") {
+                    weakFlag = 1
+                } else if (isMiddle(value) && !isStrong(value)) {
+                    middleFlag = 1;
+                } else {
+                    strongFlag = 1;
+                }
+                if (weakFlag) {
+                    weak.style.backgroundColor = "#de1111";
+                    middle.style.backgroundColor = "gray";
+                    stong.style.backgroundColor = "gray";
+                }
+                if (middleFlag) {
+                    weak.style.backgroundColor = "gray";
+                    middle.style.backgroundColor = "#40b83f";
+                    stong.style.backgroundColor = "gray";
+                }
+                if (strongFlag) {
+                    weak.style.backgroundColor = "gray";
+                    middle.style.backgroundColor = "gray";
+                    stong.style.backgroundColor = "#f79100";
+                }
+                // let value_int = parseInt(value);
+                // let result = reg_password.test(value_int);
+                // console.log(result);
+                if (result) {
+                    reg_password_warn.style.display = "inline-block";
+                    password_success.style.display = "none";
+                    weak.style.backgroundColor = "gray";
+                    middle.style.backgroundColor = "gray";
+                    stong.style.backgroundColor = "gray";
+                } else {
+                    reg_password_warn.style.display = "none";
+                    password_success.style.display = "inline-block";
+
+                }
+            }
+        }
+        verifty.onblur = function () {
+            let before_password = password.value;
+            let after_password = verifty.value;
+            if (before_password === after_password && before_password != "") {
+                verifty_warn.style.display = "none";
+                verifty_success.style.display = "inline-block";
+            } else {
+                verifty_warn.style.display = "inline-block";
+                verifty_success.style.display = "none";
+            }
+        }
+        function isMiddle(initial) {
+            let length = initial.length;
+            for (let i = 0; i < length; i++) {
+                if (initial[i] >= 'a' && initial[i] <= 'z') {
+                    return true;
+                } else {
+                    continue;
+                }
+            }
+        };
+        function isStrong(initial) {
+            let length = initial.length;
+            for (let i = 0; i < length; i++) {
+                if (initial[i] >= 'A' && initial[i] <= 'Z') {
+                    return true;
+                } else {
+                    continue;
+                }
+            }
+        }
+
+
+        let eye1 = document.getElementsByClassName("icon-yanjing2")[0];
+        eye1.onmouseenter = function () {
+            password.type = "text";
+            // if (password.type === "password") {
+            //     password.type = "text";
+            // } else {
+            //     password.type = "password"
+            // }
+        }
+        eye1.onmouseleave = function () {
+            password.type = "password";
+        }
+        function VerifyPassword() {
+
+        }
+
+    </script>
+</body>
+
+</html>

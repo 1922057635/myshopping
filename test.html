@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./fonts/font_hyiga8oumrd/iconfont.ttf?t=1623380620583') format('truetype');
+        }
+
+        .contant {
+            position: relative;
+            margin: 100px auto;
+            width: 721px;
+            height: 455px;
+            background-color: hotpink;
+            /* overflow: hidden; */
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline;
+            width: 721px;
+            height: 455px;
+        }
+
+        .iconfont {
+            font-family: "iconfont";
+        }
+
+        button {
+            position: absolute;
+            z-index: 6;
+            font-size: 36px;
+            color: white;
+            background-color: rgba(100, 149, 237, .5);
+            border: none;
+        }
+
+        ul {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            z-index: 6;
+        }
+
+        li {
+            border-radius: 50%;
+            background-color: rgba(100, 149, 237, .5);
+            width: 50px;
+            text-align: center;
+            line-height: 50px;
+            height: 50px;
+            float: left;
+            margin-left: 5px;
+            list-style: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contant">
+        <button class="iconfont" style="left: 0;top: 50%;transform: translateY(-50%);" id="before">&#xe685;</button>
+        <img src="./imgs/focus1.jpg" alt="" style="z-index: 5;">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+        </ul>
+        <button class="iconfont" style="right: 0;top: 50%;transform: translateY(-50%);" id="next">&#xe688;</button>
+    </div>
+    <script>
+        let shuzu = ["./imgs/focus1.jpg", "./imgs/focus2.jpg", "./imgs/focus3.jpg", "./imgs/focus4.jpg", "./imgs/focus5.jpg", "./imgs/focus6.jpg", "./imgs/focus7.jpg", "./imgs/focus8.jpg"];
+        let Img = document.getElementsByTagName("img")[0];
+        let next = document.getElementById("next");
+        let before = document.getElementById("before");
+        let i = 0;
+        next.onclick = function () {
+            Img.src = shuzu[i];
+            i = i + 1;
+            if (i > 8) {
+                i = 0;
+            }
+        }
+        before.onclick = function () {
+            i = i - 1;
+            if (i < 0) {
+                i = 7;
+            }
+            Img.src = shuzu[i];
+        }
+        let liclick = document.getElementsByTagName("li");
+        for (let j = 0; j < liclick.length; j++) {
+            liclick[j].onclick = function () {
+                Img.src = shuzu[j];
+            }
+        }
+        setInterval(() => {
+            let Src = Img.src;
+            let splitresult = Src.split("/");
+            let result1 = splitresult[9];
+            let result = "./imgs/" + result1;
+            let index = shuzu.indexOf(result);
+            index = index + 1;
+            if (index > 7) {
+                index = 0;
+            };
+            Img.src = shuzu[index];
+        }, 2000)
+    </script>
+</body>
+
+</html>

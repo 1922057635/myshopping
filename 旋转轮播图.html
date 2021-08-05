@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <style>
+        .wrap {
+            position: relative;
+            height: 670px;
+            background-color: thistle;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .wrap img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .innter {
+            width: 1000px;
+            height: 550px;
+            margin: 50px auto 0 auto;
+            background-color: transparent;
+
+        }
+
+        .wrap a {
+            display: block;
+            position: absolute;
+            z-index: 6;
+            height: 0;
+            line-height: 50px;
+            width: 50px;
+            font-size: 0;
+            text-align: center;
+            text-decoration: none;
+            background-color: rgba(95, 158, 160, .3);
+        }
+
+        a:hover {
+            background-color: rgb(95, 158, 160);
+        }
+
+        .right {
+            top: 320px;
+            right: 266px;
+        }
+
+        .left {
+            top: 320px;
+            left: 266px;
+        }
+
+
+        .style1 {
+            left: 30%;
+            height: 300px;
+            z-index: 3;
+            opacity: 0.3;
+        }
+
+        .style2 {
+            left: 40%;
+            height: 400px;
+            z-index: 4;
+            opacity: 0.5;
+        }
+
+        .style3 {
+            left: 50%;
+            height: 470px;
+            z-index: 5;
+        }
+
+        .style4 {
+            left: 60%;
+            height: 400px;
+            z-index: 4;
+            opacity: 0.5;
+        }
+
+        .style5 {
+            left: 70%;
+            height: 300px;
+            z-index: 3;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="innter">
+            <img src="./imgs/focus1.jpg" alt="" class="style1">
+            <img src="./imgs/focus2.jpg" alt="" class="style2">
+            <img src="./imgs/focus3.jpg" alt="" class="style3">
+            <img src="./imgs/focus4.jpg" alt="" class="style4">
+            <img src="./imgs/focus5.jpg" alt="" class="style5">
+            <a href="#" class="iconfont icon-arrow-right right"></a>
+            <a href="#" class="iconfont icon-arrow-left left"></a>
+        </div>
+
+    </div>
+    <script>
+        let imgSrc = ["./imgs/focus1.jpg", "./imgs/focus2.jpg", "./imgs/focus3.jpg", "./imgs/focus4.jpg", "./imgs/focus5.jpg"];
+        let imgStyle = ["style1", "style2", "style3", "style4", "style5"];
+        let imgStyleLeft = ["style1", "style2", "style3", "style4", "style5"];
+        let interval;
+        let img = document.getElementsByTagName("img");
+        let right = document.getElementsByClassName("right")[0];
+        let left = document.getElementsByClassName("left")[0];
+        right.onclick = function () {
+            moveRight();
+            for (let i = 0; i < img.length; i++) {
+                let beforeclass = img[i].getAttribute("class");
+                img[i].classList.remove(beforeclass);
+                img[i].classList.add(imgStyle[i]);
+            }
+
+        };
+        left.onclick = function () {
+            moveLeft();
+            for (let i = 0; i < img.length; i++) {
+                let beforeclass = img[i].getAttribute("class");
+                img[i].classList.remove(beforeclass);
+                img[i].classList.add(imgStyleLeft[i]);
+            }
+        };
+        left.addEventListener("mouseover", function () {
+            this.style.height = "50px";
+            this.style.fontSize = "36px";
+        }, false);
+        right.addEventListener("mouseover", function () {
+            this.style.height = "50px";
+            this.style.fontSize = "36px";
+        }, false);
+
+
+        // setInterval(() => {
+        //     moveRight();
+        //     for (let i = 0; i < img.length; i++) {
+        //         let beforeclass = img[i].getAttribute("class");
+        //         img[i].classList.remove(beforeclass);
+        //         img[i].classList.add(imgStyle[i]);
+        //     }
+        // }, 2000);
+        // 
+
+
+        for (let i = 0; i < img.length; i++) {
+            img[i].onmouseenter = function () {
+                right.style.height = "50px";
+                right.style.fontSize = "36px";
+                left.style.height = "50px";
+                left.style.fontSize = "36px";
+                clearInterval(interval);
+            };
+            img[i].onmouseleave = function () {
+                right.style.height = "0";
+                right.style.fontSize = "0";
+                left.style.height = "0";
+                left.style.fontSize = "0";
+                interval = setInterval(auto, 2000);
+            }
+        };
+        function moveRight() {
+            let temple = imgStyle[4];
+            for (let i = 3; i >= 0; i--) {
+                imgStyle[i + 1] = imgStyle[i];
+            };
+            imgStyle[0] = temple;
+        };
+
+
+        function moveLeft() {
+            let temple = imgStyleLeft[0];
+            for (let i = 1; i < imgStyleLeft.length; i++) {
+                imgStyleLeft[i - 1] = imgStyleLeft[i];
+            }
+            imgStyleLeft[4] = temple;
+        }
+
+        function auto() {
+            moveRight();
+            for (let i = 0; i < img.length; i++) {
+                let beforeclass = img[i].getAttribute("class");
+                img[i].classList.remove(beforeclass);
+                img[i].classList.add(imgStyle[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+/* @font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/font_2594362_r8jdmfpe27e/iconfont.woff2?t=1623984096516') format('woff2'),
+        url('../fonts/font_2594362_r8jdmfpe27e/iconfont.woff?t=1623984096516') format('woff'),
+        url('../fonts/font_2594362_r8jdmfpe27e/iconfont.ttf?t=1623984096516') format('truetype');
+} */
+
+.load {
+    height: 688px;
+}
+
+.title {
+    height: 61px;
+}
+
+.main {
+    position: relative;
+    height: 486px;
+    background-image: url(../imgs/loginbg.png);
+}
+
+.main .main_load {
+    position: absolute;
+    top: 62px;
+    right: 100px;
+    width: 379px;
+    height: 362px;
+    padding: 22px 39px 0 37px;
+    background-color: white;
+}
+
+
+.active {
+    color: #c81623;
+}
+
+.main .main_load h1 {
+    position: relative;
+    font-size: 18px;
+}
+
+.main .main_load h1 ::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 2px;
+    width: 0;
+    height: 80%;
+    border-left: 1px solid #ededed;
+}
+
+.main .main_load h1 span:first-child {
+    margin-left: 10px;
+}
+
+.main .main_load h1 span:last-child {
+    margin-right: 13px;
+}
+
+.main .main_load .warn {
+    height: 26px;
+    background-color: #fffdee;
+    border: 1px solid #f5eecf;
+    line-height: 26px;
+    text-indent: 1em;
+    margin-top: 15px;
+}
+
+.main .main_load .main_load_form {
+    position: relative;
+    margin-top: 10px;
+}
+
+.icon-user {
+    display: block;
+    position: absolute;
+    width: 34px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #cfcdcd;
+    left: 0px;
+    top: -1px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.icon-iconset0114 {
+    position: absolute;
+    width: 34px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #cfcdcd;
+    left: 0px;
+    top: 57px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+.main .main_load .main_load_form input[type="text"],
+input[type="password"] {
+    display: block;
+    outline: none;
+    border: 1px solid #bbbaba;
+    width: 303px;
+    height: 36px;
+    margin-bottom: 20px;
+    padding-left: 46px;
+}
+
+input::-webkit-input-placeholder {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.main .main_load .main_load_form input[type="radio"] {
+    border-radius: 0;
+}
+
+.main .main_load .main_load_form input[type="submit"] {
+    display: block;
+    width: 100%;
+    height: 41px;
+    background-color: #c81623;
+    color: white;
+    margin-top: 15px;
+}
+
+.main .main_load .main_load_form .main_footer {
+    margin-top: 36px;
+}
+
+.main .main_load .main_load_form .main_footer .main_footer_left i {
+    display: inline-block;
+    width: 25px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 15px;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.main .main_load .main_load_form .main_footer .main_footer_left i:nth-child(1) {
+    background-color: skyblue;
+}
+
+.main .main_load .main_load_form .main_footer .main_footer_left i:nth-child(3) {
+    background-color: #1ba9ee;
+}
+
+.main .main_load .main_load_form .main_footer .main_footer_left i:nth-child(2) {
+    background-color: #e52425;
+}
+
+.main .main_load .main_load_form .main_footer .main_footer_left i:nth-child(4) {
+    background-color: green;
+}
+
+
+.main .main_load .main_load_form .main_footer .main_footer_right {
+    font-size: 14px;
+    line-height: 36px;
+    margin-right: 5px;
+}
+
+.forget .iconfont {
+    font-family: "iconfont" !important;
+    font-size: 12px;
+    font-style: normal;
+}
+
+.forget .iconfont span {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.forget a:first-child {
+    display: block;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #aaaaaa;
+    color: #aaaaaa;
+}
+
+.forget span {
+    margin-left: 2px;
+    display: block;
+    float: left;
+}
+
+.warn {
+    position: relative;
+}
+
+.warn i {
+    position: absolute;
+    right: 0;
+    color: #333;
+    font-size: 12px;
+}
+
+.weixinLoad {
+    margin: 50px auto;
+    width: 120px;
+}
+
+.weixinLoad img {
+    width: 100%;
+}
+
+.weixinLoad p {
+    text-align: center;
+}
+
+#saoma {
+    cursor: pointer;
+}
+
+#cardload {
+    cursor: pointer;
+}

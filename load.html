@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录(PYG.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <meta name="description"
+        content="品优购PYG.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!" />
+    <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <!-- 引入初始化css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./fonts/font_2594362_phx3ams6fgq/iconfont.css">
+    <link rel="stylesheet" href="./fonts/font_hyiga8oumrd/iconfont.css">
+    <!-- 引入load.css -->
+    <link rel="stylesheet" href="./css/load.css">
+</head>
+
+<body>
+    <div class="w load">
+        <div class="title">
+            <img src="./imgs/logo.png" alt="">
+        </div>
+        <div class="main">
+            <div class="main_load">
+                <h1 class="clearfix">
+                    <span class="fl" id="saoma">扫描登陆</span>
+                    <span class="fr active" id="cardload">账户登陆</span>
+                </h1>
+                <p class="warn">
+                    公共场所不建议自动登录，以免账号丢失<i class="iconfont icon-cuohao"></i>
+                </p>
+                <form action="#" class="main_load_form" style="display: block;">
+                    <input type="text" name="username" placeholder="邮箱/用户名/手机号"><i class="iconfont icon-user"></i>
+                    <input type="password" name="password" placeholder="请输入密码"><i class="iconfont icon-iconset0114
+                    "></i>
+                    <div class="clearfix forget">
+                        <a href="#" class="fl iconfont" data-value="1"><i>&#xe687;</i></a><span>自动登录</span>
+                        <a href="#" class="fr">忘记密码？</a>
+                    </div>
+
+                    <input type="submit" name="submit" value="登录">
+                    <div class="main_footer clearfix">
+                        <div class="main_footer_left fl">
+                            <i class="iconfont icon-iconfonticon6
+                            "></i>
+                            <i class="iconfont icon-weibo
+                            "></i>
+                            <i class="iconfont icon-zhifubao"></i>
+                            <i class="iconfont icon-weixin
+                            "></i>
+                        </div>
+                        <div class="main_footer_right fr">
+                            <a href="./register.html">立即注册</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="weixinLoad" style="display: none;">
+                    <img src="./imgs/wx_cz.jpg" alt="">
+                    <p>请使用微信扫一扫</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let mark_out = document.querySelector(".forget a:first-child");
+        let mark_inside = document.querySelector(".forget a:first-child i");
+
+        mark_out.onclick = function () {
+            let mark_inside_display = mark_inside.style.display;
+            let value = mark_out.dataset.value;
+            if (mark_inside_display === "none") {
+                mark_inside.style.display = "block";
+                mark_out.dataset.value = "1";
+                console.log(mark_out.dataset.value);
+            } else {
+                mark_inside.style.display = "none";
+                mark_out.dataset.value = "0";
+                console.log(mark_out.dataset.value);
+            }
+        }
+        let cuohao = document.querySelector(".warn i");
+        let warn = document.querySelector(".warn");
+        let form = document.getElementsByClassName("main_load_form")[0];
+        let weixinsao = document.getElementsByClassName("weixinLoad")[0];
+        cuohao.onclick = function () {
+            warn.style.display = "none";
+            form.style.marginTop = "30px";
+            weixinsao.style.marginTop = "90px";
+        }
+
+        let saoma = document.getElementById("saoma");
+        let cardLoad = document.getElementById("cardload");
+        saoma.onclick = function () {
+            weixinsao.style.display = "block";
+            form.style.display = "none";
+        }
+        cardLoad.onclick = function () {
+            weixinsao.style.display = "none";
+            form.style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>

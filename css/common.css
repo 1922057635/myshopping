@@ -1,0 +1,316 @@
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.red {
+    color: #c81623 !important;
+}
+
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.shortcut li {
+    float: left;
+}
+
+.shortcut .fl li:last-child a:first-child {
+    margin: 0 5px;
+}
+
+.shortcut .fl a:hover {
+    color: #c81623;
+}
+
+.shortcut .fr li {
+    text-align: center;
+    position: relative;
+}
+
+.shortcut .fr li a {
+    border-right: 1px solid #333;
+    padding: 0 20px 0 14px;
+}
+
+.shortcut .fr li.icon-arrow::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    content: "\e687";
+    font-family: "iconfont";
+}
+
+/* header css start  */
+.header {
+    height: 105px;
+    position: relative;
+}
+
+.header .logo {
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 171px;
+    height: 61px;
+}
+
+.header .logo h1 {
+    height: 100%;
+}
+
+.header .logo a {
+    /* 京东的将a连接里面的字消失 */
+    font-size: 0;
+    /* 淘宝将里面的字消失的做法 */
+    /* text-indent: -9999px;
+    overflow: hidden; */
+
+    display: block;
+    height: 100%;
+    background-image: url(../imgs/logo.png);
+}
+
+.header .search {
+    position: absolute;
+    left: 348px;
+    top: 27px;
+    height: 36px;
+}
+
+.header .search input[type="text"] {
+    padding-left: 10px;
+    border: 2px solid #b1191a;
+    float: left;
+    width: 455px;
+    height: 36px;
+}
+
+.header .search input[type="submit"] {
+    float: left;
+    width: 83px;
+    height: 36px;
+    background-color: #b1191a;
+    color: white;
+}
+
+.header .hotwords {
+    position: absolute;
+    top: 66px;
+    left: 345px;
+}
+
+.header .hotwords a {
+    margin: 0 10px;
+}
+
+.header .shopping-car {
+    position: absolute;
+    top: 25px;
+    right: 63px;
+    width: 140px;
+    height: 36px;
+    text-align: center;
+    line-height: 34px;
+    background-color: #f7f7f7;
+    border: 1px solid #dfdfdf;
+}
+
+.header .shopping-car::before {
+    content: "\f0179";
+    font-family: "iconfont";
+    color: #d84a4a;
+}
+
+.header .shopping-car::after {
+    content: "\e688";
+    font-family: "iconfont";
+    margin-left: 5px;
+    color: #999999;
+}
+
+.header .shopping-car i {
+    background-color: red;
+    position: absolute;
+    /* 用left而不用right是为了让里面的文字当文字变大的时候往右延伸 */
+    left: 97px;
+    top: -4px;
+    height: 12px;
+    /* 不设定宽度是为了当里面的文字变大的时候不会超出盒子，不设定宽度默认就是文字的宽度 */
+    line-height: 12px;
+    padding: 0 5px;
+    border-radius: 6px 6px 6px 0;
+    font-style: normal;
+}
+
+
+/* nav */
+.nav {
+    height: 47px;
+    border-bottom: 2px solid #b1191a;
+}
+
+.dropdown {
+    position: relative;
+    width: 209px;
+    height: 47px;
+    background-color: #b1191a;
+    cursor: pointer;
+}
+
+.dropdown:hover .dd {
+    height: 466px;
+}
+
+.dropdown .dt {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+}
+
+.dropdown .dd {
+    overflow: hidden;
+    width: 209px;
+    height: 0;
+    background-color: #c81623;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.dropdown .dd li {
+    height: 31px;
+    line-height: 31px;
+    padding: 0 10px;
+    margin-left: 1px;
+}
+
+.dropdown .dd li a {
+    color: white;
+    font-size: 14px;
+}
+
+.dropdown .dd li::after {
+    content: '\e688';
+    font-family: "iconfont";
+    color: white;
+    float: right;
+}
+
+.dropdown .dd li:hover {
+    background-color: white;
+}
+
+.dropdown .dd li:hover a {
+    color: red;
+}
+
+.navitems li {
+    float: left;
+
+}
+
+.navitems li a {
+    display: block;
+    /* 为了能过让a有一个范围性点击，给a设置高度和padding值 */
+    height: 45px;
+    line-height: 45px;
+    padding: 0 23px;
+    font-size: 16px;
+    color: #333333;
+}
+
+/* footer */
+.footer {
+    height: 416px;
+    background-color: #f5f5f5;
+}
+
+.mod-service {
+    height: 110px;
+    border-bottom: 1px solid #ededed;
+}
+
+.mod-service li {
+    float: left;
+    height: 49px;
+    width: 240px;
+
+    margin-top: 30px;
+}
+
+.mod-service li i {
+    float: left;
+    width: 49px;
+    height: 49px;
+
+    background-image: url(../imgs/icons.png);
+    margin-right: 5px;
+    margin-left: 30px;
+}
+
+.mod-service li h5 {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.mod_service_zheng {
+    background-position: -252px -3px;
+}
+
+.mod_service_ji {
+    background-position: -254px -54px;
+}
+
+.mod_service_wu {
+    background-position: -256px -106px;
+}
+
+.mod-help {
+    height: 190px;
+    border-bottom: 1px solid #ededed;
+}
+
+.mod-help dl {
+    float: left;
+    width: 200px;
+    padding: 20px 0 0 50px;
+}
+
+.mod-help dl dt {
+    font-size: 16px;
+    color: #333;
+}
+
+.mod-help dl dd {
+    margin-bottom: 3px;
+}
+
+.mod-help dl:last-child {
+    width: 140px;
+    text-align: center;
+}
+
+.mod-copyright {
+    text-align: center;
+}
+
+.mod-copyright p:first-child {
+    margin: 10px 0;
+}
+
+.mod-copyright p:first-child a {
+    padding: 0 10px;
+    border-right: 1px solid #666;
+}
+
+.mod-copyright p:last-child {
+    line-height: 20px;
+}
